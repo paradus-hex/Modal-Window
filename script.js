@@ -19,3 +19,11 @@ for (let i = 0; i < btnsShowModal.length; i++) {
 }
 btnCloseModal.addEventListener('click', closeModal); //notice that the function isn't called with ()i.e closeModal().That is because, doing so calls the function immediately to run. but with the bracs the function will be auto run by the event handler when the button is clicked
 overlay.addEventListener('click', closeModal);
+1;
+
+//key-press event.this is a global event as this works on the whole document.that's why the dierect document.addEventListener
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
